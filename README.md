@@ -1,10 +1,10 @@
-This is Filter code
+This is Filter code\n
 This is not my code: https://github.com/jaigarg/Image-Dehazing-using-Steering-Kernel-Weighted-Guided-Image-Filtering/tree/main
-You check this link above
-Implementation is only in google colab, if you run any other , you need to modify this code
+\nYou check this link above\n
+Implementation is only in google colab, if you run any other , you need to modify this code\n
 Run this command in colab code : !git clone https://github.com/pythonpro16/new_codes.git
-Redirect the cmd to main file: %cd /content/Image-Dehazing-using-Steering-Kernel-Weighted-Guided-Image-Filtering
-Run the file which one you want, use the below commad
+\nRedirect the cmd to main file: %cd /content/Image-Dehazing-using-Steering-Kernel-Weighted-Guided-Image-Filtering
+\nRun the file which one you want, use the below commad\n
 %run filename.py
-    or
+\n    or      \n
 !python filename.py
