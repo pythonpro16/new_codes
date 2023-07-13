@@ -163,6 +163,7 @@ def Guided_Image_Filter(im,p,r,eps):
 
     mean_a = cv2.boxFilter(a,cv2.CV_64F,(r,r))
     mean_b = cv2.boxFilter(b,cv2.CV_64F,(r,r))
+    mean_a = np.uint8(mean_a * 255)
     cv2_imshow( mean_a)
     q = mean_a*im + mean_b
     return q
@@ -212,6 +213,7 @@ def Weighted_Guided_Image_Filter(im, p, r, r2, eps, lamda, N):
     b_psi = mean_p - (a_psi)*mean_I
     mean_ap = cv2.boxFilter(a_psi,cv2.CV_64F,(r2,r2))
     mean_bp = cv2.boxFilter(b_psi,cv2.CV_64F,(r2,r2))
+    mean_ap = np.uint8(mean_ap * 255)
     cv2_imshow( mean_ap)
     qp = mean_ap*im + mean_bp
     return qp
@@ -275,6 +277,7 @@ def SK_Weighted_Guided_Image_Filter(im,p,r,r2,eps,lamda,N):
     mean_a = np.array(mean_a)
     mean_b = np.array(mean_b)
     mean_b = b_psi
+    mean_a = np.uint8(mean_a * 255)
     cv2_imshow( mean_a)
     q = mean_a*im + mean_b
     return q
@@ -304,6 +307,9 @@ def TransmissionRefine(im, et, r, eps, lamda, N):
     GIF = Guided_Image_Filter(gray, gray, r, eps)
     WGIF = Weighted_Guided_Image_Filter(gray, gray, r, rd, eps, lamda, N)
     SKWGIF = SK_Weighted_Guided_Image_Filter(gray, gray, r, rd, eps, lamda, N)
+    GIF = np.uint8(GIF * 255)
+    WGIF = np.uint8(WGIF * 255)
+    SKWGIF = np.uint8(SKWGIF * 255)
     cv2_imshow(GIF)
     cv2_imshow(WGIF)
     cv2_imshow( SKWGIF)
