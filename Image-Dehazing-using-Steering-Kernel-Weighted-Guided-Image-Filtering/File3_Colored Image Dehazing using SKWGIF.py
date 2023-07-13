@@ -1,6 +1,7 @@
 import cv2;
 from math import *
 import numpy as np;
+from google.colab.patches import cv2_imshow
 
 def DarkChannel(im,sz):
     """ This Function is used to get the pixel values 
@@ -212,7 +213,7 @@ def Recover(im,t,A,tx = 0.1):
     return res
 
 
-fn = "Input Images Used\Building with Haze Color.jpg"
+fn = "./Input Images Used/Building with Haze Color.jpg"
 src = cv2.imread(fn);
 
 I = src.astype('float64')/255;
@@ -223,8 +224,13 @@ te = TransmissionEstimate(I,A,15);
 t = TransmissionRefine(src,te);
 J = Recover(I,t,A,0.1);
 
-cv2.imshow("dark",dark);
-cv2.imshow("Transmission Image",t);
-cv2.imshow('Original Image',src);
-cv2.imshow('Final Image',J);
+dark = np.uint8(dark * 255)
+t = np.uint8(t * 255)
+src = np.uint8(src * 255)
+J = np.uint8(J * 255)
+
+cv2_imshow(dark);
+cv2_imshow(t);
+cv2_imshow(src);
+cv2_imshow(J);
     
