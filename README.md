@@ -6,7 +6,7 @@ You check this link above
 
 Implementation is only in google colab, if you run any other , you need to modify this code
 
-Run this command in colab code : !git clone https://github.com/pythonpro16/new_codes.git
+Run this command in colab code : !git clone https://github.com/pythonpro16/weighted-guided-image-filtering.git
 
 Redirect the cmd to main file: %cd /content/Image-Dehazing-using-Steering-Kernel-Weighted-Guided-Image-Filtering
 
